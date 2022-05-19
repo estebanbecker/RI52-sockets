@@ -6,6 +6,10 @@ L'implémentation sera faite dans un premier temps en C, puis en C++ dans les de
 
 Ce sujet évoluera au fil du temps pour couvrir les bases des sockets, puis le multiplexage, et finalement l'usage de Qt.
 
+Les instructions et la base de code éventuelle seront partagées via des dépôts git. Si vous n'êtes pas à l'aise avec cet outil, vous pouvez vous référer au cours de GL41 disponible [ici](https://www.youtube.com/watch?v=jJBODtE_Rts&list=PLNgzB9uJ0Ss58ZdoPk1vueOMYYdfBkKoS)
+
+Les vidéos du cours sur les sockets publiées sur Moodle sont également disponibles sur [Youtube](https://www.youtube.com/watch?v=4goPrs4NtOk&list=PLNgzB9uJ0Ss4nsIBJV8j8XJwYzwV43nk2)
+
 ## Paramétrisation et sécurisation d'un client TCP
 
 Dans cet exercice, vous vous baserez sur l'exemple de client TCP vu en cours pour le rendre paramétrable :
