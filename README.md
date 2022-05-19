@@ -26,3 +26,11 @@ Dans cet exercice, vous vous baserez sur le serveur UDP du cours, qu'il s'agira 
 ## Serveur TCP full duplex
 
 On considérera toujours un serveur TCP à un seul client. Celui ci devra ajouter un texte à celui envoyé par son client et lui répondra par ce texte complété. Là encore, il est nécessaire de mémoriser l'adresse et le port du client connecté.
+
+## Chat avec un serveur TCP multiplexé
+
+Cet exercice reposera sur le multiplexage des communications pour permettre le support de plusieurs clients en même temps. L'application cliente fonctionne en deux étapes : tout d'abord le programme demande à l'utilisateur quel sera son pseudo, et se met en attente de l'entrée de l'utilisateur. Une fois le pseudo saisi, le client se connecte au serveur et boucle sur la saisie utilisateur, qui sera concaténée au pseudo de l'utilisateur afin d'être envoyée au serveur. À la réception d'un message, le client l'affiche sur la sortie standard.
+
+Le serveur fonctionne en se mettant en attente de connexions. À chaque client connecté, le serveur ajoute ce dernier dans sa liste de clients. À la réception d'un message, le serveur le retransmet à tous les clients sauf celui qui était à l'origine du message. Le serveur affiche également tous les messages reçus.
+
+Vous multiplexerez les accès avec la fonction `select`.
