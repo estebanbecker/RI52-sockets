@@ -10,7 +10,7 @@ Les instructions et la base de code éventuelle seront partagées via des dépô
 
 Les vidéos du cours sur les sockets publiées sur Moodle sont également disponibles sur [Youtube](https://www.youtube.com/watch?v=4goPrs4NtOk&list=PLNgzB9uJ0Ss4nsIBJV8j8XJwYzwV43nk2)
 
-## Paramétrisation et sécurisation d'un client TCP
+## Paramétrage et sécurisation d'un client TCP
 
 Dans cet exercice, vous vous baserez sur l'exemple de client TCP vu en cours pour le rendre paramétrable :
 
