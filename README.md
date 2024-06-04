@@ -2,9 +2,7 @@
 
 Ce TD a pour but de vous familiariser progressivement à la programmation d'applications reposant sur des communications réseau basées sur des sockets.
 
-L'implémentation sera faite dans un premier temps en C, puis en C++ dans les derniers exercices.
-
-Ce sujet évoluera au fil du temps pour couvrir les bases des sockets, puis le multiplexage, et finalement l'usage de Qt.
+L'implémentation sera faite dans un premier temps en C, puis en C++ avec Qt dans les derniers exercices.
 
 Les instructions et la base de code éventuelle seront partagées via des dépôts git. Si vous n'êtes pas à l'aise avec cet outil, vous pouvez vous référer au cours de GL41 disponible [ici](https://www.youtube.com/watch?v=jJBODtE_Rts&list=PLNgzB9uJ0Ss58ZdoPk1vueOMYYdfBkKoS)
 
