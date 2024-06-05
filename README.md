@@ -31,4 +31,4 @@ Cet exercice reposera sur le multiplexage des communications pour permettre le s
 
 Le serveur fonctionne en se mettant en attente de connexions. À chaque client connecté, le serveur ajoute ce dernier dans sa liste de clients. À la réception d'un message, le serveur le retransmet à tous les clients sauf celui qui était à l'origine du message. Le serveur affiche également tous les messages reçus.
 
-Vous multiplexerez les accès avec la fonction `select`.
+Vous multiplexerez les accès avec la fonction `poll`.
