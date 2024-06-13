@@ -4,17 +4,34 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <getopt.h> // Add this line to include the definition of 'optarg'
 
 #define BUFFER_SIZE 500
 
 int main(int argc, char *argv[]) {
+    char *hostname = "localhost";
+    int port=5555;
+    int opt;
+    while ((opt = getopt(argc, argv, "h:p:")) != -1) {
+        switch (opt) {
+        case 'h':
+            hostname = optarg;
+            break;
+        case 'p':
+            port = atoi(optarg);
+            break;
+        default: /* '?' */
+            fprintf(stderr, "Usage: %s [-h hostname] [-p port]\n", argv[0]);
+            exit(1);
+        }
+    }
     char buffer[BUFFER_SIZE+1];
     struct sockaddr_in remote_address;
     int sock_to_server;
 
     remote_address.sin_family = AF_INET;
-    remote_address.sin_port = htons(5555);
-    inet_pton(AF_INET, "127.0.0.1", &(remote_address.sin_addr));
+    remote_address.sin_port = htons(port);
+    inet_pton(AF_INET, hostname, &(remote_address.sin_addr));
     memset(&(remote_address.sin_zero), 0, sizeof(remote_address.sin_zero));
     sock_to_server = socket(AF_INET, SOCK_STREAM, 0); // Check for errors
     connect(sock_to_server, (struct sockaddr *) &remote_address, sizeof(struct sockaddr_in));
