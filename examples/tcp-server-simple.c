@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <getopt.h>
 
-#define BUFFER_SIZE 500
+#define BUFFER_SIZE 1000
 
 int main(int argc, char *argv[]) {
     char *hostname = "0.0.0.0";
@@ -40,6 +40,8 @@ int main(int argc, char *argv[]) {
     listen(srv_socket, 10);
     int client_socket = accept(srv_socket, (struct sockaddr *) &client_address, &addr_size); // Check for errors
 
+    printf("New connection from %s:%d\n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port));
+
     while(1) {
         size_t bytes_read = recv(client_socket, buffer, BUFFER_SIZE, 0);
         if (bytes_read > 0) {
@@ -52,7 +54,7 @@ int main(int argc, char *argv[]) {
                 break;
               }
             }
-            strcat(buffer, " - Message received by the server");
+            strcat(buffer, "");
             size_t bytes_sent = send(client_socket, buffer, strlen(buffer)+1, 0); // Check for errors
         }
     }
