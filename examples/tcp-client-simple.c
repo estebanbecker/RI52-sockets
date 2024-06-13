@@ -42,6 +42,13 @@ int main(int argc, char *argv[]) {
         size_t bytes_read = read(STDIN_FILENO, buffer, BUFFER_SIZE);
         buffer[bytes_read] = '\0';
         size_t bytes_sent = send(sock_to_server, buffer, bytes_read+1, 0);
+
+        size_t bytes_recieved = recv(sock_to_server, buffer, BUFFER_SIZE, 0);
+        if (bytes_recieved > 0) {
+            buffer[bytes_recieved] = '\0';
+            printf("Received: %s\n", buffer);
+            printf("From: %s:%d\n", inet_ntoa(remote_address.sin_addr), ntohs(remote_address.sin_port));
+        }
     }
     // TODO: Cleanup
     return 0;
